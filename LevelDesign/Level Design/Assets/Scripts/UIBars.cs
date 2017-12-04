@@ -22,7 +22,7 @@ public class UIBars : MonoBehaviour {
     private float hitpoint = 150;
     private float maxHitpoints = 150;
     private float gold;
-    private float maxExperience = 150;
+    private float maxExperience = 150F;
     private float currentExperience = 0;
     private float level = 1;
     float exponent = 1.1F;
@@ -112,7 +112,8 @@ public class UIBars : MonoBehaviour {
 
      void Update()
     {
-        if(enemPoints == 0) 
+        
+        if (enemPoints == 0) 
         hitpoint -= Time.deltaTime * 10;
         if (hitpoint < 0)
         {
@@ -158,7 +159,7 @@ public class UIBars : MonoBehaviour {
         if (currentExperience > maxExperience)
         {
             
-            float restExperience = maxExperience - currentExperience;
+            float restExperience = Math.Abs(maxExperience - currentExperience);
             level = level + 1;
             maxExperience = maxExperience * exponent;
             exponent = exponent + 0.015F;

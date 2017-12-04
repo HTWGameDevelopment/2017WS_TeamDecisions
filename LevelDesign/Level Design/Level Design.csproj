@@ -121,18 +121,20 @@
     <Compile Include="Assets\Downloaded Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Twirl.cs" />
     <Compile Include="Assets\Downloaded Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\VignetteAndChromaticAberration.cs" />
     <Compile Include="Assets\Downloaded Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
-    <Compile Include="Assets\Scripts\DialogInteraction.cs" />
     <Compile Include="Assets\Scripts\DialogManager.cs" />
     <Compile Include="Assets\Scripts\FloorTriggersTests\FloorTrigger.cs" />
     <Compile Include="Assets\Scripts\FloorTriggersTests\FloorTriggerEnem.cs" />
     <Compile Include="Assets\Scripts\FloorTriggersTests\FloorTriggerExperience.cs" />
     <Compile Include="Assets\Scripts\FloorTriggersTests\FloorTriggerGold.cs" />
     <Compile Include="Assets\Scripts\PlayerCasting.cs" />
-    <Compile Include="Assets\Scripts\Quest\Quest001Buttons.cs" />
-    <Compile Include="Assets\Scripts\Quest\Quest001SwordTrigger.cs" />
-    <Compile Include="Assets\Scripts\Quest\Quest001TreeReached.cs" />
-    <Compile Include="Assets\Scripts\Quest\Quest001Trigger.cs" />
-    <Compile Include="Assets\Scripts\Quest\Quest001TriggerRiverCrossed.cs" />
+    <Compile Include="Assets\Scripts\Quest\Quest001\DialogInteraction.cs" />
+    <Compile Include="Assets\Scripts\Quest\Quest001\Quest001Buttons.cs" />
+    <Compile Include="Assets\Scripts\Quest\Quest001\Quest001DialogConstants.cs" />
+    <Compile Include="Assets\Scripts\Quest\Quest001\Quest001Events.cs" />
+    <Compile Include="Assets\Scripts\Quest\Quest001\Quest001SwordTrigger.cs" />
+    <Compile Include="Assets\Scripts\Quest\Quest001\Quest001TreeReached.cs" />
+    <Compile Include="Assets\Scripts\Quest\Quest001\Quest001Trigger.cs" />
+    <Compile Include="Assets\Scripts\Quest\Quest001\Quest001TriggerRiverCrossed.cs" />
     <Compile Include="Assets\Scripts\UIBars.cs" />
   </ItemGroup>
   <ItemGroup>

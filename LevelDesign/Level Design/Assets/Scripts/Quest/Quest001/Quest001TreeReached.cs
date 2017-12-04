@@ -21,16 +21,17 @@ public class Quest001TreeReached : MonoBehaviour {
         {
             
             
-            ObjectiveText3.GetComponent<Text>().text = "- Reach the tree[x]";
+            ObjectiveText3.GetComponent<Text>().text = Quest001DialogConstants.QUEST001OBJECTIVE3FINISHED;
             ObjectiveText4.SetActive(true);
-            ObjectiveText4.GetComponent<Text>().text = "- Collect the sword[ ]";
+            ObjectiveText4.GetComponent<Text>().text = Quest001DialogConstants.QUEST001OBJECTIVE4;
+            Quest001Events.TreeInspected = true;
             StartCoroutine(InfoPanelShow());
         }
     }
 
     IEnumerator InfoPanelShow()
     {
-        InfoPanelText.GetComponent<Text>().text = "A new objective of the quest just appeared! This happens from time to time if you reveal something throughout the quest which was not known before";
+        InfoPanelText.GetComponent<Text>().text = Quest001DialogConstants.QUEST001INFOPANELTEXT3;
         InfoPanel.SetActive(true);
         yield return new WaitForSeconds(10);
         InfoPanel.SetActive(false);

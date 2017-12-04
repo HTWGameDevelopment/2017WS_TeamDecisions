@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,13 +23,18 @@ public class Quest001Buttons : MonoBehaviour {
 
 
 
+
     public void TakeOption1()
     {
         DialogPanel.SetActive(false);
-        DialogPanel2Text.GetComponent<Text>().text = "No adult wants to listen to long storytelling, so I will keep it short. This world Sekia consists of multiple parts from different" +
-            " worlds which were tore apart. You still remember Enem, right? You don´t? Its the power you need to cast magic and perform certain actions. But be careful, once you are out "
-        + "of Enem you will slowly but surely die until you got a bit of Enem back";
-        DialogPanel2.SetActive(true);   
+        DialogPanel2Text.GetComponent<Text>().text = Quest001DialogConstants.QUEST001DIALOGTEXTOPTION1;
+        DialogPanel2.SetActive(true);
+        if (Input.GetButtonDown("FinishDialog"))
+        {
+            Player.SetActive(true);
+            Cam.SetActive(false);
+            UIQuest.SetActive(false);
+        }
     }
        
 
@@ -39,17 +45,18 @@ public class Quest001Buttons : MonoBehaviour {
         UIQuest.SetActive(false);
         StartCoroutine(SetQuestUI());
         DialogPanel.SetActive(false);
-        DialogPanel2Text.GetComponent<Text>().text = "Keep walking on the path until you reach the river and then cross it. Turn to the left and you should see a way leading to the ancient tree" +
-            " on the mountains. Nobody knows how this tree grew there. Inspect it. Maybe there is some special meaning to it. Keep in mind that your physical body is different from the average" +
-            " human. You should be able to use your strong body for your advantage";
-        DialogPanel2.SetActive(true);
-        if(Input.GetButtonDown("FinishDialog"))
-        {
-            Player.SetActive(true);
-            Cam.SetActive(false);
-            UIQuest.SetActive(false);
-        }
-        StartCoroutine(FinishDialog());
+        DialogPanel2Text.GetComponent<Text>().text = Quest001DialogConstants.QUEST001DIALOGTEXTOPTION2;
+            DialogPanel2.SetActive(true);
+            Quest001Events.QuestTaken = true;
+            if (Input.GetButtonDown("FinishDialog"))
+            {
+                Player.SetActive(true);
+                Cam.SetActive(false);
+                UIQuest.SetActive(false);
+            }
+          StartCoroutine(FinishDialog());
+      
+      
     }
 
 
@@ -62,12 +69,12 @@ public class Quest001Buttons : MonoBehaviour {
 
     IEnumerator SetQuestUI()
     {
-        InfoPanelText.GetComponent<Text>().text = "This is your first quest! You can see all the objectives of the quest on the top right corner of the screen. Complete them in the order they are listed";
+        InfoPanelText.GetComponent<Text>().text = Quest001DialogConstants.QUEST001INFOPANELTEXT1;
         InfoPanel.SetActive(true);
-        QuestBox.GetComponent<Text>().text = "Learning the basics";
-        Objective1.GetComponent<Text>().text = "- Reach the river[ ]";
-        Objective2.GetComponent<Text>().text = "- Cross the river[ ]";
-        Objective3.GetComponent<Text>().text = "- Check the tree[ ]";
+        QuestBox.GetComponent<Text>().text = Quest001DialogConstants.QUEST001NAME ;
+        Objective1.GetComponent<Text>().text = Quest001DialogConstants.QUEST001OBJECTIVE1;
+        Objective2.GetComponent<Text>().text = Quest001DialogConstants.QUEST001OBJECTIVE2;
+        Objective3.GetComponent<Text>().text = Quest001DialogConstants.QUEST001OBJECTIVE3;
         DialogManager.DialogNumber = 1;
         yield return new WaitForSeconds(0.5f);
         QuestBox.SetActive(true);
@@ -81,6 +88,7 @@ public class Quest001Buttons : MonoBehaviour {
         Objective3.SetActive(true);
         yield return new WaitForSeconds(9);
         InfoPanel.SetActive(false);
+        
      
 
 

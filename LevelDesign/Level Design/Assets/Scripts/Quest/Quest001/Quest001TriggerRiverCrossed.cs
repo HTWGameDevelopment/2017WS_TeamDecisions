@@ -13,7 +13,8 @@ public class Quest001TriggerRiverCrossed : MonoBehaviour {
     {
         if (Quest.activeSelf)
         {
-            ObjectiveText2.GetComponent<Text>().text = "- Cross the river[x]";
+            ObjectiveText2.GetComponent<Text>().text = Quest001DialogConstants.QUEST001OBJECTIVE2FINISHED;
+            Quest001Events.RiverCrossed = true;
         }
 
     }

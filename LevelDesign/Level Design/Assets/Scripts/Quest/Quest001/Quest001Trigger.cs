@@ -20,7 +20,8 @@ public class Quest001Trigger : MonoBehaviour
     {
         if (Quest.activeSelf)
         {
-        ObjectiveText1.GetComponent<Text>().text = "- Reach the river[x]";
+        ObjectiveText1.GetComponent<Text>().text =Quest001DialogConstants.QUEST001OBJECTIVE1FINISHED;
+            Quest001Events.RiverReached = true;
         
             StartCoroutine(InfoPanelShow());
 
@@ -31,7 +32,7 @@ public class Quest001Trigger : MonoBehaviour
 
     IEnumerator InfoPanelShow()
     {
-        InfoPanelText.GetComponent<Text>().text = "You just completed the first part of the quest! This in indicated by this: [x]";
+        InfoPanelText.GetComponent<Text>().text = Quest001DialogConstants.QUEST001INFOPANELTEXT2;
         InfoPanel.SetActive(true);
         yield return new WaitForSeconds(10);
         InfoPanel.SetActive(false);
