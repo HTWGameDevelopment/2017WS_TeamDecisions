@@ -20,10 +20,10 @@ public class Quest001SwordTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (Quest.activeSelf)
+        if (Quest001Events.QuestTaken == true)
         {
  
-            ObjectiveText4.GetComponent<Text>().text = Quest001DialogConstants.QUEST001OBJECTIVE4FINISHED;
+            ObjectiveText4.GetComponent<Text>().text = Quest001DialogConstants.QUEST001_OBJECTIVE4_FINISHED;
             Sword.SetActive(false);
             Quest001Events.SwordTaken = true;
         }

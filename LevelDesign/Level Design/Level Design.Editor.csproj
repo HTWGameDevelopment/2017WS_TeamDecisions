@@ -144,6 +144,7 @@
     <Compile Include="Assets\Downloaded Assets\NatureStarterKit2\Editor\ImageEffects\VignetteAndChromaticAberrationEditor.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\AdventureForge\Read me.txt" />
     <None Include="Assets\Downloaded Assets\Black Hole\Hole4.shader" />
     <None Include="Assets\Downloaded Assets\Black Hole\ReadMe.txt" />
     <None Include="Assets\Downloaded Assets\Black Hole\Shader\Black Hole.shader" />
@@ -234,6 +235,7 @@
     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
+    <None Include="Assets\low poly medieval buildings\readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

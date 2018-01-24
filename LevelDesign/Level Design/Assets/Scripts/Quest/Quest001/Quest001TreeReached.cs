@@ -17,13 +17,13 @@ public class Quest001TreeReached : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (Quest.activeSelf)
+        if (Quest001Events.QuestTaken == true)
         {
             
             
-            ObjectiveText3.GetComponent<Text>().text = Quest001DialogConstants.QUEST001OBJECTIVE3FINISHED;
+            ObjectiveText3.GetComponent<Text>().text = Quest001DialogConstants.QUEST001_OBJECTIVE3_FINISHED;
             ObjectiveText4.SetActive(true);
-            ObjectiveText4.GetComponent<Text>().text = Quest001DialogConstants.QUEST001OBJECTIVE4;
+            ObjectiveText4.GetComponent<Text>().text = Quest001DialogConstants.QUEST001_OBJECTIVE4;
             Quest001Events.TreeInspected = true;
             StartCoroutine(InfoPanelShow());
         }
@@ -31,7 +31,7 @@ public class Quest001TreeReached : MonoBehaviour {
 
     IEnumerator InfoPanelShow()
     {
-        InfoPanelText.GetComponent<Text>().text = Quest001DialogConstants.QUEST001INFOPANELTEXT3;
+        InfoPanelText.GetComponent<Text>().text = Quest001DialogConstants.QUEST001_INFOPANEL_TEXT3;
         InfoPanel.SetActive(true);
         yield return new WaitForSeconds(10);
         InfoPanel.SetActive(false);

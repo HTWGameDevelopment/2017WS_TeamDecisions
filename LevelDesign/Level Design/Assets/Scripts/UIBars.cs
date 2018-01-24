@@ -23,9 +23,10 @@ public class UIBars : MonoBehaviour {
     private float maxHitpoints = 150;
     private float gold;
     private float maxExperience = 150F;
-    private float currentExperience = 0;
+    public float currentExperience = 0;
     private float level = 1;
     float exponent = 1.1F;
+    public static float currentExpStatic = 0; 
 
 
 
@@ -121,6 +122,9 @@ public class UIBars : MonoBehaviour {
             Debug.Log("You died!");
         }
         UpdateHealthBar();
+        currentExperience =  currentExperience + currentExpStatic;
+        currentExpStatic = 0;
+        UpdateExperienceBar();
          
     }
  
@@ -170,5 +174,9 @@ public class UIBars : MonoBehaviour {
         }
         UpdateExperienceBar();
         UpdateLevel();
+    }
+    public static void upExp(float exp)
+    {
+        currentExpStatic = currentExpStatic + exp;
     }
 }

@@ -10,5 +10,8 @@ public class Quest001Events : MonoBehaviour {
     public static Boolean RiverCrossed = false;
     public static Boolean TreeInspected = false;
     public static Boolean SwordTaken = false;
+    public static Boolean KeptSword = false;
+    public static Boolean GaveSword = false;
+    public static Boolean FinishedDecision001 = false;
 
 }

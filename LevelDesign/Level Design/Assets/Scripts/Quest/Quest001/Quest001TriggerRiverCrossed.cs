@@ -11,11 +11,11 @@ public class Quest001TriggerRiverCrossed : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (Quest.activeSelf)
+        if (Quest001Events.QuestTaken == true)
         {
-            ObjectiveText2.GetComponent<Text>().text = Quest001DialogConstants.QUEST001OBJECTIVE2FINISHED;
+            ObjectiveText2.GetComponent<Text>().text = Quest001DialogConstants.QUEST001_OBJECTIVE2_FINISHED;
             Quest001Events.RiverCrossed = true;
         }
-
+       
     }
 }
