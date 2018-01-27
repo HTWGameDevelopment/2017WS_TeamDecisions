@@ -10,6 +10,8 @@ public class SaburaHintEvents : MonoBehaviour {
     public static Boolean EnemDrainHintFound = false;
     public static Boolean PhotoalbumHintFound = false;
     public static Boolean RiftHintFound = false;
+    public static Boolean DeviceHintFound = false;
+    public static Boolean SaburaAttacked = false;
 
    
 }

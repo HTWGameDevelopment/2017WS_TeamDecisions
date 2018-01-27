@@ -26,7 +26,13 @@ public class UIBars : MonoBehaviour {
     public float currentExperience = 0;
     private float level = 1;
     float exponent = 1.1F;
-    public static float currentExpStatic = 0; 
+    public static float currentExpStatic = 0;
+    public GameObject SaburaCam;
+    public GameObject MotherCam;
+    public GameObject Clue1Cam;
+    public GameObject Clue2Cam;
+    public GameObject Clue3Cam;
+    public GameObject Clue4Cam;
 
 
 
@@ -125,7 +131,7 @@ public class UIBars : MonoBehaviour {
         currentExperience =  currentExperience + currentExpStatic;
         currentExpStatic = 0;
         UpdateExperienceBar();
-         
+        deactivateCams();
     }
  
 
@@ -178,5 +184,15 @@ public class UIBars : MonoBehaviour {
     public static void upExp(float exp)
     {
         currentExpStatic = currentExpStatic + exp;
+    }
+
+    private void deactivateCams()
+    {
+        SaburaCam.SetActive(false);
+        MotherCam.SetActive(false);
+        Clue1Cam.SetActive(false);
+        Clue2Cam.SetActive(false);
+        Clue3Cam.SetActive(false);
+        Clue4Cam.SetActive(false);
     }
 }

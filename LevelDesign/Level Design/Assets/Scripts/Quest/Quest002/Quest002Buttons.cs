@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Quest002Buttons : MonoBehaviour {
-    private GameObject Character;
     public GameObject Player;
     public GameObject Cam;
     public GameObject UIQuest;
@@ -23,7 +22,7 @@ public class Quest002Buttons : MonoBehaviour {
 
     void Awake()
     {
-        Character = GameObject.FindGameObjectWithTag("Player");
+       
 
     }
 

@@ -26,7 +26,14 @@ public class PeasantMotherInteraction : MonoBehaviour {
     void Update()
     {
         Distance = PlayerCasting.DistanceFromTarget;
+        if (Input.GetButtonDown("Exit"))
+        {
+            Player.SetActive(true);
+            Cam.SetActive(false);
+            DialogPanel.SetActive(false);
+            DialogPanel2.SetActive(false);
 
+        }
 
     }
 

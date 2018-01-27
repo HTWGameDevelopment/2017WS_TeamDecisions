@@ -121,6 +121,7 @@
     <Compile Include="Assets\Downloaded Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Twirl.cs" />
     <Compile Include="Assets\Downloaded Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\VignetteAndChromaticAberration.cs" />
     <Compile Include="Assets\Downloaded Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
+    <Compile Include="Assets\Scripts\AuraMovement.cs" />
     <Compile Include="Assets\Scripts\DialogManager.cs" />
     <Compile Include="Assets\Scripts\FloorTriggersTests\FloorTrigger.cs" />
     <Compile Include="Assets\Scripts\FloorTriggersTests\FloorTriggerEnem.cs" />
@@ -148,7 +149,10 @@
     <Compile Include="Assets\Scripts\Quest\Quest002\QuestSaveKidTrigger.cs" />
     <Compile Include="Assets\Scripts\Quest\Quest002\Sabura2Interaction.cs" />
     <Compile Include="Assets\Scripts\Quest\Questlog.cs" />
+    <Compile Include="Assets\Scripts\Quest\SaburaHints\ClueEnem.cs" />
+    <Compile Include="Assets\Scripts\Quest\SaburaHints\DeviceClue.cs" />
     <Compile Include="Assets\Scripts\Quest\SaburaHints\MushroomClue.cs" />
+    <Compile Include="Assets\Scripts\Quest\SaburaHints\PhotoalbumClue.cs" />
     <Compile Include="Assets\Scripts\Quest\SaburaHints\RiftClue.cs" />
     <Compile Include="Assets\Scripts\Quest\SaburaHints\SaburaHintConstants.cs" />
     <Compile Include="Assets\Scripts\Quest\SaburaHints\SaburaHintEvents.cs" />
