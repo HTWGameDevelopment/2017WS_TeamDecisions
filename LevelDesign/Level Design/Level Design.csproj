@@ -148,6 +148,9 @@
     <Compile Include="Assets\Scripts\Quest\Quest002\QuestSaveKid.cs" />
     <Compile Include="Assets\Scripts\Quest\Quest002\QuestSaveKidTrigger.cs" />
     <Compile Include="Assets\Scripts\Quest\Quest002\Sabura2Interaction.cs" />
+    <Compile Include="Assets\Scripts\Quest\Quest002\Sabura2QuestButtons.cs" />
+    <Compile Include="Assets\Scripts\Quest\Quest003\Quest003Constants.cs" />
+    <Compile Include="Assets\Scripts\Quest\Quest003\Quest003Events.cs" />
     <Compile Include="Assets\Scripts\Quest\Questlog.cs" />
     <Compile Include="Assets\Scripts\Quest\SaburaHints\ClueEnem.cs" />
     <Compile Include="Assets\Scripts\Quest\SaburaHints\DeviceClue.cs" />
@@ -157,6 +160,7 @@
     <Compile Include="Assets\Scripts\Quest\SaburaHints\SaburaHintConstants.cs" />
     <Compile Include="Assets\Scripts\Quest\SaburaHints\SaburaHintEvents.cs" />
     <Compile Include="Assets\Scripts\UIBars.cs" />
+    <Compile Include="Assets\mesh.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AdventureForge\Read me.txt" />

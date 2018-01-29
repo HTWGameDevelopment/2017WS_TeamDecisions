@@ -23,16 +23,19 @@ public class PhotoalbumClue : MonoBehaviour {
 
     void OnMouseOver()
     {
-        if (Distance <= 4)
-        {
-            Display.SetActive(true);
-        }
-        if (Input.GetButtonDown("Interaction"))
+        if (Questlog.Quest001Finished == true)
         {
             if (Distance <= 4)
             {
-                SetDialogPanel2Text(SaburaHintConstants.CLUES_PHOTOALBUM);
-                SaburaHintEvents.PhotoalbumHintFound = true;
+                Display.SetActive(true);
+            }
+            if (Input.GetButtonDown("Interaction"))
+            {
+                if (Distance <= 4)
+                {
+                    SetDialogPanel2Text(SaburaHintConstants.CLUES_PHOTOALBUM);
+                    SaburaHintEvents.PhotoalbumHintFound = true;
+                }
             }
         }
     }

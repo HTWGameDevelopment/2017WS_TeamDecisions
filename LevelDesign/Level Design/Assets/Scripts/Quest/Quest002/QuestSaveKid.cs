@@ -13,6 +13,7 @@ public class QuestSaveKid : MonoBehaviour
     public float Distance;
     public static Boolean QuestSaveKidActive = false;
     public static Boolean KidSaved = false;
+    public static Boolean KidDied = false;
     public GameObject Quest002Panel;
     public GameObject QuestSaveKidPanel;
     public GameObject ObjectiveText2;

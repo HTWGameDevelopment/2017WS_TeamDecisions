@@ -22,6 +22,12 @@ public class Sabura2Interaction : MonoBehaviour {
     public GameObject InfoPanel;
     public GameObject Sabura;
     public GameObject InfoPanelText;
+    public GameObject ChoiceDialogPanel;
+    public GameObject ChoiceDialogPanelText;
+    public GameObject DialogChoice1;
+    public GameObject DialogChoice2;
+    public GameObject DialogChoice3;
+
 
     void Update()
     {
@@ -58,6 +64,8 @@ public class Sabura2Interaction : MonoBehaviour {
             else if (Input.GetButtonDown("Expose"))
             {
 
+                ExposeSabura();
+               
             }
             
         }
@@ -75,10 +83,10 @@ public class Sabura2Interaction : MonoBehaviour {
                     UIBars.upExp(100F);
                     Questlog.Quest002Finished = true;
                 }
-                else if (Input.GetButtonDown("Expose"))
-                {
-
-                }
+            }
+            else if (Input.GetButtonDown("Expose"))
+            {
+                ExposeSabura();
             }
         }
         else if (Distance <= 3)
@@ -136,7 +144,9 @@ public class Sabura2Interaction : MonoBehaviour {
             AllHintsFound = true;
             return AllHintsFound;
         }
-        return AllHintsFound;
+        AllHintsFound = true;    //DEBUG
+        return AllHintsFound;       
+    
     }
     IEnumerator AttackSabura ()
     {
@@ -149,6 +159,25 @@ public class Sabura2Interaction : MonoBehaviour {
         SaburaHintEvents.SaburaAttacked = true;
         yield return new WaitForSeconds(8.0f);
         InfoPanel.SetActive(false);
+
+    }
+
+    private void ExposeSabura()
+    {
+        SaburaHintEvents.SaburaExposeActive = true;
+        Screen.lockCursor = false;
+        Cursor.visible = true;
+        Display.SetActive(false);
+        Cam.SetActive(true);
+        Player.SetActive(false);
+        DialogPanel.SetActive(false);
+        DialogPanel2.SetActive(false);
+        ChoiceDialogPanel.SetActive(true);
+        ChoiceDialogPanelText.GetComponent<Text>().text = SaburaHintConstants.EXPOSE_SABURA;
+        DialogChoice1.GetComponent<Text>().text = SaburaHintConstants.SABURA_EXPOSE_EVENT_DIALOG1_CHOICE1;
+        DialogChoice2.GetComponent<Text>().text = SaburaHintConstants.SABURA_EXPOSE_EVENT_DIALOG2_CHOICE2;
+        DialogChoice3.GetComponent<Text>().text = SaburaHintConstants.SABURA_EXPOSE_EVENT_DIALOG3_CHOICE3;
+
 
     }
 

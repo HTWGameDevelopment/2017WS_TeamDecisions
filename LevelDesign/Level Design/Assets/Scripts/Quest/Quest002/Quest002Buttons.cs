@@ -51,7 +51,6 @@ public class Quest002Buttons : MonoBehaviour {
         Quest002Events.Quest002Active = false;
         QuestBox2.SetActive(false);
         QuestBox.GetComponent<Text>().text = Quest002DialogConstants.QUEST002_MOTHER_NAME;
-        Objective1.GetComponent<Text>().text = Quest002DialogConstants.QUEST002_MOTHER_OBJECTIVE1;
         Objective2.GetComponent<Text>().text = Quest002DialogConstants.QUEST002_MOTHER_OBJECTIVE2;
         yield return new WaitForSeconds(0.5f);
         QuestBox.SetActive(true);
@@ -72,6 +71,7 @@ public class Quest002Buttons : MonoBehaviour {
         DialogPanel2Text.GetComponent<Text>().text = Quest002DialogConstants.QUEST002_PEASANT_MOTHER_QUEST_ACCEPTED;
         QuestSaveKid.QuestSaveKidActive = true;
         DialogPanel2.SetActive(true);
+        QuestSaveKid.KidDied = false;
         StartCoroutine(FinishDialog());
         StartCoroutine(SetQuestUI002());
         if (Input.GetButtonDown("Exit"))

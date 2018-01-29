@@ -27,16 +27,19 @@ public class RiftClue : MonoBehaviour {
 
     void OnMouseOver()
     {
-        if (Distance <= 3)
-        {
-            Display.SetActive(true);
-        }
-        if (Input.GetButtonDown("Interaction"))
+        if (Questlog.Quest001Finished == true && QuestSaveKid.KidDied == false && Questlog.QuestSaveKid == true)
         {
             if (Distance <= 3)
             {
-                SetDialogPanel2Text(SaburaHintConstants.CLUES_RIFT);
-                SaburaHintEvents.RiftHintFound = true;
+                Display.SetActive(true);
+            }
+            if (Input.GetButtonDown("Interaction"))
+            {
+                if (Distance <= 3)
+                {
+                    SetDialogPanel2Text(SaburaHintConstants.CLUES_RIFT);
+                    SaburaHintEvents.RiftHintFound = true;
+                }
             }
         }
     }

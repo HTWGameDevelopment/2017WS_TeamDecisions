@@ -24,6 +24,7 @@ public class Quest001Buttons : MonoBehaviour {
     private GameObject Character;
     public GameObject PeasantMother;
     public GameObject Sabura;
+    public GameObject Sabura2;
 
 
     void Awake()
@@ -117,7 +118,7 @@ public class Quest001Buttons : MonoBehaviour {
         Objective5.SetActive(true);
         yield return new WaitForSeconds(0.5f);
         Objective6.SetActive(true);
-        PeasantMother.SetActive(true);
+        Sabura2.SetActive(true);
         Sabura.SetActive(false);
         
       

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,16 +23,31 @@ public class PeasantMotherInteraction : MonoBehaviour {
     public GameObject SaburaCam;
     public GameObject Clue1Cam;
     public GameObject Clue2Cam;
+    public static Boolean MotherDialogActive = false;
+    public static Boolean ColliderTriggered = false;
+    public GameObject Mother;
 
     void Update()
     {
         Distance = PlayerCasting.DistanceFromTarget;
         if (Input.GetButtonDown("Exit"))
         {
-            Player.SetActive(true);
-            Cam.SetActive(false);
-            DialogPanel.SetActive(false);
-            DialogPanel2.SetActive(false);
+            if (MotherDialogActive == true)
+            {
+                QuestSaveKid.KidDied = true;
+                Player.SetActive(true);
+                Cam.SetActive(false);
+                DialogPanel.SetActive(false);
+                DialogPanel2.SetActive(false);
+                Mother.SetActive(false);
+            }
+            else
+            {
+                Player.SetActive(true);
+                Cam.SetActive(false);
+                DialogPanel.SetActive(false);
+                DialogPanel2.SetActive(false);
+            }
 
         }
 
@@ -42,24 +58,20 @@ public class PeasantMotherInteraction : MonoBehaviour {
         Player = GameObject.FindGameObjectWithTag("Player");
 
     }
-    void OnMouseOver()
+    private void OnTriggerEnter(Collider other)
     {
-        if (Distance <= 3)
+        if (Questlog.Quest001Finished == true && Questlog.Quest002Finished == false)
         {
-            Display.SetActive(true);
-        }
-        if (Input.GetButtonDown("Interaction"))
-        {
-            if (Distance <= 3)
+            if (ColliderTriggered == false)
             {
+                Mother.SetActive(true);
+                MotherDialogActive = true;
                 SetDialogPanelText(Quest002DialogConstants.QUEST002_PEASANT_MOTHER_INTRO);
+                ColliderTriggered = true;
             }
         }
     }
-    private void OnMouseExit()
-    {
-        Display.SetActive(false);
-    }
+
     private void SetDialogPanelText(string DialogText)
     {
         SaburaCam.SetActive(false);
