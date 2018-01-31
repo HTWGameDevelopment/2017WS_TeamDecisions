@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -31,6 +32,7 @@ public class Sabura2QuestButtons : MonoBehaviour {
     public GameObject Interaction;
     public GameObject Expose;
     public GameObject Attack;
+    private Boolean Option1_3Taken;
 
     void Update()
     {
@@ -97,14 +99,10 @@ public class Sabura2QuestButtons : MonoBehaviour {
  
     }
 
-   public void SaburaExposeOption2()
+    public void SaburaExposeOption2()
     {
-        if (SaburaHintEvents.SaburaExposeDialog1 == true && SaburaHintEvents.SaburaExposeDialog1_3 == true)
-        {
-            SaburaHintEvents.SaburaConvinced = true;
-            SetQuest003SaburaAllied();
-        }
-        else if (SaburaHintEvents.SaburaExposeDialog1 == true && SaburaHintEvents.SaburaExposeDialog1_1 == true && SaburaHintEvents.SaburaExposeDialog1_1_1 == false)
+
+        if (SaburaHintEvents.SaburaExposeDialog1 == true && SaburaHintEvents.SaburaExposeDialog1_1 == true && SaburaHintEvents.SaburaExposeDialog1_1_1 == false && SaburaHintEvents.SaburaExposeDialog1_3 == false)
         {
             ChoiceDialogPanel.SetActive(false);
             DialogPanel2.SetActive(true);
@@ -112,13 +110,17 @@ public class Sabura2QuestButtons : MonoBehaviour {
             DialogPanel2Text.GetComponent<Text>().text = SaburaHintConstants.SABURA_EXPOSE_EVENT_DIALOG1_2_TEXT;
             StartCoroutine(SetQuest003()); ;
         }
+        else if(SaburaHintEvents.SaburaExposeDialog1_3 == true)
+        {
+            StartCoroutine(SetQuest003SaburaAllied());
+        }
 
         else if (SaburaHintEvents.SaburaExposeDialog1 == true && SaburaHintEvents.SaburaExposeDialog1_1 == true && SaburaHintEvents.SaburaExposeDialog1_1_1 == true)
         {
             ChoiceDialogPanel.SetActive(false);
             StartCoroutine(SetQuest003());
         }
-        else  if (SaburaHintEvents.SaburaExposeDialog1 == true && SaburaHintEvents.SaburaExposeDialog1_3 == true && SaburaHintEvents.SaburaExposeDialog1_1 == false)
+        else if (SaburaHintEvents.SaburaExposeDialog1 == true && SaburaHintEvents.SaburaExposeDialog1_3 == true && SaburaHintEvents.SaburaExposeDialog1_1 == false)
         {
             ChoiceDialogPanel.SetActive(false);
             StartCoroutine(SetQuest003());
@@ -131,18 +133,21 @@ public class Sabura2QuestButtons : MonoBehaviour {
             DialogPanel2Text.GetComponent<Text>().text = SaburaHintConstants.SABURA_EXPOSE_EVENT_DIALOG2_TEXT;
             StartCoroutine(SetQuest003()); ;
         }
+
     
-        
     }
     public void SaburaExposeOption3()
     {
         if (SaburaHintEvents.SaburaExposeDialog1_1 == true)
         {
+            SaburaHintEvents.SaburaExposeDialog1_3 = true;
+            Option1_3Taken = true;
             ChoiceDialogText.GetComponent<Text>().text = SaburaHintConstants.SABURA_EXPOSE_EVENT_DIALOG1_1_3_TEXT;
             ChoiceDialogPanelOption1.GetComponent<Text>().text = SaburaHintConstants.SABURA_EXPOSE_EVENT_DIALOG1_1_3_CHOICE1;
             ChoiceDialogPanelOption2.GetComponent<Text>().text = SaburaHintConstants.SABURA_EXPOSE_EVENT_DIALOG1_1_3_CHOICE2;
             ChoiceDialogPanelOption3.SetActive(false);
-            SaburaHintEvents.SaburaExposeDialog1_3 = true;
+      
+
         }
         else
         {
@@ -153,7 +158,11 @@ public class Sabura2QuestButtons : MonoBehaviour {
 
     IEnumerator SetQuest003()
     {
-        Quest003Events.Quest003Active = false;
+        SaburaHintEvents.SaburaExposeActive = false;
+        Expose.SetActive(false);
+        Attack.SetActive(false);
+        Quest003Events.Quest003Active = true;
+        Questlog.Quest002Finished = true;
         QuestBox2.SetActive(false);
         QuestBoxMother.SetActive(false);
         QuestBox.GetComponent<Text>().text = Quest003Constants.QUEST003_NAME;
@@ -176,7 +185,14 @@ public class Sabura2QuestButtons : MonoBehaviour {
     }
     IEnumerator SetQuest003SaburaAllied()
     {
-        Quest003Events.Quest003Active = false;
+        SaburaHintEvents.SaburaExposeActive = false;
+        Expose.SetActive(false);
+        Attack.SetActive(false);
+        Quest003Events.Quest003Active = true;
+        Questlog.Quest002Finished = true;
+        ChoiceDialogPanel.SetActive(false);
+        Cam.SetActive(false);
+        Player.SetActive(true);
         QuestBox2.SetActive(false);
         QuestBoxMother.SetActive(false);
         QuestBox.GetComponent<Text>().text = Quest003Constants.QUEST003_NAME;

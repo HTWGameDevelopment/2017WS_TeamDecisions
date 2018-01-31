@@ -46,22 +46,24 @@ public class QuestSaveKid : MonoBehaviour
             if (QuestSaveKidActive == true && KidSaved == false)
             {
                 Display.SetActive(true);
-            }
-            if (Input.GetButtonDown("Interaction"))
-            {
-                if (Distance <= 2)
+
+                if (Input.GetButtonDown("Interaction"))
                 {
-                    ObjectiveText2.GetComponent<Text>().text = Quest002DialogConstants.QUEST002_MOTHER_OBJECTIVE2FINISHED;
-                    Character.SendMessage("GainExperience", 100F);
-                    Quest002Panel.SetActive(true);
-                    QuestSaveKidActive = false;
-                    Quest002Events.Quest002Active = true;
-                    KidSaved = true;
-                    QuestSaveKidPanel.SetActive(false);
-                    Quest002Panel.SetActive(true);
-                    Kid.SetActive(false);
-                    Questlog.QuestSaveKid = true;
-                    StartCoroutine(QuestSaveKidFinished());
+                    if (Distance <= 2)
+                    {
+                        ObjectiveText2.GetComponent<Text>().text = Quest002DialogConstants.QUEST002_MOTHER_OBJECTIVE2FINISHED;
+                        Character.SendMessage("GainExperience", 100F);
+                        Quest002Panel.SetActive(true);
+                        QuestSaveKidActive = false;
+                        Quest002Events.Quest002Active = true;
+                        QuestSaveKidActive = false;
+                        KidSaved = true;
+                        QuestSaveKidPanel.SetActive(false);
+                        Quest002Panel.SetActive(true);
+                        Kid.SetActive(false);
+                        Questlog.QuestSaveKid = true;
+                        StartCoroutine(QuestSaveKidFinished());
+                    }
                 }
             }
         }
@@ -73,7 +75,7 @@ public class QuestSaveKid : MonoBehaviour
         DialogPanelText.GetComponent<Text>().text = Quest002DialogConstants.QUEST002_MOTHER_KIDDIALOG;
         DialogPanelText.SetActive(true);
         Mother.SetActive(false);
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(6F);
         DialogPanel.SetActive(false);
         DialogPanelText.SetActive(false);
 

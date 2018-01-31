@@ -27,7 +27,7 @@ public class RiftClue : MonoBehaviour {
 
     void OnMouseOver()
     {
-        if (Questlog.Quest001Finished == true && QuestSaveKid.KidDied == false && Questlog.QuestSaveKid == true)
+        if (Questlog.Quest001Finished == true && Questlog.QuestSaveKid == true)
         {
             if (Distance <= 3)
             {

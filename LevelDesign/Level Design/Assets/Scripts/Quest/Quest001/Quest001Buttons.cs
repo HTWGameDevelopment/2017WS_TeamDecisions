@@ -25,6 +25,7 @@ public class Quest001Buttons : MonoBehaviour {
     public GameObject PeasantMother;
     public GameObject Sabura;
     public GameObject Sabura2;
+    public GameObject InteractionCharacter;
 
 
     void Awake()
@@ -120,6 +121,8 @@ public class Quest001Buttons : MonoBehaviour {
         Objective6.SetActive(true);
         Sabura2.SetActive(true);
         Sabura.SetActive(false);
+        yield return new WaitForSeconds(1.5f);
+        InteractionCharacter.SetActive(false);
         
       
 
@@ -164,14 +167,7 @@ public class Quest001Buttons : MonoBehaviour {
     }
     private void TakeOption2Quest001()
     {
-        // DEBUG MODE
-        Questlog.Quest001Finished = false;
-        Quest001Events.QuestTaken = true;
-        Quest001Events.SwordTaken = true;
-        Quest001Events.RiverCrossed = true;
-        Quest001Events.RiverReached = true;
-        Quest001Events.TreeInspected = true;
-        // DEBUG MODE
+      
         Player.SetActive(true);
         Cam.SetActive(false);
         UIQuest.SetActive(false);
@@ -190,6 +186,12 @@ public class Quest001Buttons : MonoBehaviour {
     }
     private void TakeOption3Quest001()
     {
+        Questlog.Quest001Finished = false;
+        Quest001Events.QuestTaken = true;
+        Quest001Events.SwordTaken = true;
+        Quest001Events.RiverCrossed = true;
+        Quest001Events.RiverReached = true;
+        Quest001Events.TreeInspected = true;
         Player.SetActive(true);
         Cam.SetActive(false);
         UIQuest.SetActive(false);

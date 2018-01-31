@@ -19,10 +19,10 @@ public class Quest002DialogConstants : MonoBehaviour {
     public static string QUEST002_OBJECTIVE5FINISHED = "- Go back to the forest[x]";
     public static string QUEST002_OBJECTIVE6FINISHED = "- Collect Part 3[x]";
 
-    public static string QUEST002_PEASANT_MOTHER_INTRO = "Can you save my kid I beg you. My son is in a life threatening situation i will do anything if you can help him.";
+    public static string QUEST002_PEASANT_MOTHER_INTRO = "Can you save my kid I beg you. My son is in a life threatening situation i will do anything if you can help him. He climbed the big tree next to the small house.";
     public static string QUEST002_PEASANT_MOTHER_REWARDINFO = " That can wait, I swear I will repay you with everything, but please save my son first. We have no time";
-    public static string QUEST002_PEASANT_MOTHER_QUEST_ACCEPTED = "God bless you, thank you very much. My son is in the forest. I hope you will make it there and find him in time.";
-    public static string QUEST002_PEASANT_MOTHER_QUEST_DECLINED = "You should be ashamed of yourself letting a kid die. I will save him even it costs my own life. And i swear, if something happens to him, it will be your"
+    public static string QUEST002_PEASANT_MOTHER_QUEST_ACCEPTED = "God bless you, thank you very much. My son climbed a big tree near a small wooden house. I hope you will make it there and find him in time.";
+    public static string QUEST002_PEASANT_MOTHER_QUEST_DECLINED = "You should be ashamed of yourself letting a kid die. I will save him even it costs my own life. And I swear, if something happens to him, it will be your"
         + " fault and i will get revenge. Keep that in mind, scum";
     public static string QUEST002_MOTHER_NAME = "Showing courage";
     public static string QUEST002_MOTHER_OBJECTIVE1 = "Find the kid[ ]";

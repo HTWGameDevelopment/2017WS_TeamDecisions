@@ -18,6 +18,7 @@ public class Quest002Buttons : MonoBehaviour {
     public GameObject DialogPanel;
     public GameObject DialogPanel2;
     public GameObject DialogPanel2Text;
+    public GameObject DialogPanelText;
 
 
     void Awake()
@@ -62,7 +63,7 @@ public class Quest002Buttons : MonoBehaviour {
         Objective1.SetActive(true);
         yield return new WaitForSeconds(0.5f);
         Objective2.SetActive(true);
-   
+        
 
     }
     private void TakeOption1Quest002()
@@ -106,20 +107,9 @@ public class Quest002Buttons : MonoBehaviour {
     }
     private void TakeOption3Quest002()
     {
-        DialogPanel.SetActive(false);
-        DialogPanel2Text.GetComponent<Text>().text = Quest002DialogConstants.QUEST002_PEASANT_MOTHER_REWARDINFO;
-        StartCoroutine(FinishDialog());
-        if (Input.GetButtonDown("Exit"))
-        {
-            Player.SetActive(true);
-            Cam.SetActive(false);
-            UIQuest.SetActive(false);
-            DialogPanel.SetActive(true);
-            DialogPanel2.SetActive(false);
-            
-
-
-        }
+        DialogPanelText.GetComponent<Text>().text = Quest002DialogConstants.QUEST002_PEASANT_MOTHER_REWARDINFO;
+        
+    
        
 
     }

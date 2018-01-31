@@ -27,6 +27,15 @@ public class Sabura2Interaction : MonoBehaviour {
     public GameObject DialogChoice1;
     public GameObject DialogChoice2;
     public GameObject DialogChoice3;
+    public GameObject QuestBox;
+    public GameObject QuestBox2;
+    public GameObject QuestBoxMother;
+    public GameObject Objective1;
+    public GameObject Objective2;
+    public GameObject Objective3;
+    public GameObject Objective4;
+    public GameObject Objective5;
+    public GameObject Objective6;
 
 
     void Update()
@@ -100,6 +109,7 @@ public class Sabura2Interaction : MonoBehaviour {
                     SetDialogPanel2Text(Quest002DialogConstants.QUEST002_MAINQUEST_FINISHED);
                     UIBars.upExp(100F);
                     Questlog.Quest002Finished = true;
+                    StartCoroutine(SetQuest003());
                 }
                 else
                 {
@@ -144,7 +154,7 @@ public class Sabura2Interaction : MonoBehaviour {
             AllHintsFound = true;
             return AllHintsFound;
         }
-        AllHintsFound = true;    //DEBUG
+        // AllHintsFound = true;    //DEBUG
         return AllHintsFound;       
     
     }
@@ -180,9 +190,30 @@ public class Sabura2Interaction : MonoBehaviour {
 
 
     }
+    IEnumerator SetQuest003()
+    {
+        Quest003Events.Quest003Active = true;
+        Questlog.Quest002Finished = true;
+        Display.SetActive(false);
+        QuestBox2.SetActive(false);
+        QuestBoxMother.SetActive(false);
+        QuestBox.GetComponent<Text>().text = Quest003Constants.QUEST003_NAME;
+        Objective1.GetComponent<Text>().text = Quest003Constants.QUEST003_OBJECTIVE_NORMAL_INTERACTION;
+        yield return new WaitForSeconds(0.5f);
+        QuestBox.SetActive(true);
+        Objective2.SetActive(false);
+        Objective3.SetActive(false);
+        Objective4.SetActive(false);
+        Objective5.SetActive(false);
+        Objective6.SetActive(false);
+        yield return new WaitForSeconds(2f);
+        Objective1.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        Sabura.SetActive(false);
+        yield return new WaitForSeconds(1.5f);
+        Display.SetActive(false);
+    }
 
-    
- 
 
 }
 

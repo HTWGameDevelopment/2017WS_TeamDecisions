@@ -129,8 +129,21 @@ public class UIBars : MonoBehaviour {
         }
         UpdateHealthBar();
         currentExperience =  currentExperience + currentExpStatic;
+        if (currentExperience > maxExperience)
+        {
+
+            float restExperience = Math.Abs(maxExperience - currentExperience);
+            level = level + 1;
+            maxExperience = maxExperience * exponent;
+            exponent = exponent + 0.015F;
+            currentExperience = restExperience;
+
+
+
+        }
         currentExpStatic = 0;
         UpdateExperienceBar();
+        UpdateLevel();
         deactivateCams();
     }
  
