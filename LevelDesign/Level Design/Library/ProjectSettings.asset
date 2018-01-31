@@ -474,7 +474,7 @@ PlayerSettings:
     Collab: 0
     ErrorHub: 0
     Hub: 0
-    UNet: 0
+    UNet: 1
   cloudProjectId: 582cf586-cd14-48b7-aefb-08f48d15f258
   projectName: Level Design
   organizationId: hybrion
